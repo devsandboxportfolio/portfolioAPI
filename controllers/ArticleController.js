@@ -5,7 +5,7 @@ exports.getAllArticles = async (req, res) => {
     const allArticles = await Article.find()
     res.json(allArticles)
   } catch(err) {
-    res.json({message: err})
+    res.json({message: "abc"})
   }
 }
 
