@@ -4,7 +4,7 @@
   "description": "Sandbox environment for learning new technologies and implementations\r setup:\r download and install git (set up account if you haven't already with github)",
   "main": "./app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "npx nodemon",
     "dev": "npx nodemon"
   },
   "repository": {
