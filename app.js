@@ -27,11 +27,10 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully")
 })
 
-const port = process.env.PORT || 5000
-
+app.set('port', process.env.PORT || 5000);
 module.exports = app;
 
 // server start
-app.listen(port, () => {
-  console.log("Server running on Port " + port)
-})
+app.listen(app.get('port'), function () {
+  console.log('Express server listening on port ' + app.get('port'));
+});
