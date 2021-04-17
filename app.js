@@ -21,8 +21,7 @@ app.use("/article", articleRouter)
 app.use("/project", projectRouter)
 
 // db
-app.set('db_url', process.env.DB_URL);
-mongoose.connect(app.get('db_url'), { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
 const connection = mongoose.connection
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully")
