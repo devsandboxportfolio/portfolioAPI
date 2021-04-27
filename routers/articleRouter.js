@@ -1,11 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const controller = require("../controllers/ArticleController")
+const authenticateToken = require('../auth')
 
 router.get("/", controller.getAllArticles)
 router.get("/:articleId", controller.getArticle)
-router.post("/", controller.createArticle)
-router.put("/:articleId", controller.updateArticle)
-router.delete("/:articleId", controller.deleteArticle)
+router.post("/", authenticateToken, controller.createArticle)
+router.put("/:articleId", authenticateToken, controller.updateArticle)
+router.delete("/:articleId", authenticateToken, controller.deleteArticle)
 
 module.exports = router

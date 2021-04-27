@@ -8,6 +8,10 @@ const ArticleSchema = mongoose.Schema({
   },
   author: String,
   text: String,
+  userId: {
+    type: ObjectId,
+    required: true,
+  },
 }, {
   timestamps: true
 })
