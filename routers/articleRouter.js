@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const controller = require("../controllers/ArticleController")
-const authenticateToken = require('../auth')
+const authenticateToken = require('devsandbox-authenticate')
 
 router.get("/", controller.getAllArticles)
 router.get("/:articleId", controller.getArticle)
