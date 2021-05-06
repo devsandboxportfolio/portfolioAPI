@@ -1,5 +1,8 @@
 const mongoose = require('mongoose')
 
+var Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId;
+    
 const ArticleSchema = mongoose.Schema({
   articleName: {
     type: String,
