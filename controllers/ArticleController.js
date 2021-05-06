@@ -21,7 +21,8 @@ exports.getArticle = async (req, res) => {
 exports.createArticle = async (req, res) => {
   try {
     const article = new Article({
-      ...req.body
+      ...req.body,
+      userId: req.user.userId
     })
 
     await article.save()
@@ -37,7 +38,8 @@ exports.updateArticle = async (req, res) => {
     const updatedArticle = await Article.updateOne(
       {_id: req.params.articleId}, 
       {$set: {
-        ...req.body
+        ...req.body,
+        userId: req.user.userId
       }}
     )
     const allArticles = await Article.find()
@@ -49,7 +51,7 @@ exports.updateArticle = async (req, res) => {
 
 exports.deleteArticle = async (req, res) => {
   try {
-    await Article.deleteOne({_id: req.params.articleId})
+    await Article.deleteOne({_id: req.params.articleId, userId: req.user.userId})
     const allArticles = await Article.find()
     res.json(allArticles)
   } catch(err) {
