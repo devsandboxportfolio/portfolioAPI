@@ -2,8 +2,10 @@
 const path     = require("path")
 const express  = require("express")
 const app      = express()
-const cors     = require('cors');
+const cors     = require('cors')
 const mongoose = require("mongoose")
+const sls = require("serverless-http")
+
 
 require('dotenv').config();
 
@@ -28,7 +30,7 @@ connection.once('open', () => {
 })
 
 app.set('port', process.env.PORT || 5000);
-module.exports = app;
+module.exports.handler = sls(app);
 
 // server start
 app.listen(app.get('port'), function () {
