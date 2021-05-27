@@ -2,8 +2,10 @@
 const path     = require("path")
 const express  = require("express")
 const app      = express()
-const cors     = require('cors');
+const cors     = require('cors')
 const mongoose = require("mongoose")
+const sls = require("serverless-http")
+
 
 require('dotenv').config();
 
