@@ -2,7 +2,7 @@ version: 0.1
 phases:
   install:
     commands:
-      - npm install
+      - npm install -g
       - npm install -g serverless
   build:
     commands:
