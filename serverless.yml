@@ -1,0 +1,18 @@
+service: portfolioAPI
+
+provider: 
+  name: aws 
+  runtime: nodejs14.x
+  stage: dev 
+  region: us-west-1 
+
+functions: 
+  app: 
+    handler: app.handler 
+    events: 
+      - http: 
+          path: / 
+          method: ANY 
+      - http: 
+            path: /{proxy+} 
+            method: ANY
