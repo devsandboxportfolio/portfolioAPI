@@ -4,6 +4,8 @@ phases:
     commands:
       - npm install -g
       - npm install -g serverless
+  pre_build:
+      - zip -r api.zip
   build:
     commands:
-      - serverless deploy -v --aws-profile serverless
+      - serverless deploy -v
