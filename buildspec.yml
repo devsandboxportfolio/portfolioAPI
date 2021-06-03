@@ -5,6 +5,7 @@ phases:
       - npm install -g
       - npm install -g serverless
   pre_build:
+    commands:
       - zip -r api.zip
   build:
     commands:
