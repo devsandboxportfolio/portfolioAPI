@@ -3,7 +3,7 @@ phases:
   install:
     commands:
       - npm install -g
-      - npm install -g serverless
+      - npm install -g serverless --unsafe-perm
   build:
     commands:
       - serverless config credentials --provider aws --key AWS_ACCESS_KEY_ID --secret AWS_SECRET_ACCESS_KEY
