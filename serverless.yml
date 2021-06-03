@@ -5,12 +5,12 @@ provider:
   runtime: nodejs14.x
   stage: dev 
   region: us-west-1
-  role: arn:aws:iam::121918142008:user/serverless
-  # iamRoleStatements:
-  #   - Effect: "Allow"
-  #     Action:
-  #       - "*"
-  #     Resource: "*"
+  # role: arn:aws:iam::121918142008:user/serverless
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "*"
+      Resource: "*"
 
 functions: 
   app: 
